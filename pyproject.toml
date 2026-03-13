@@ -3,16 +3,20 @@ name = "pythonproject3"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Безгина Анастасия",email = "brbrbraleale@gmail.com"}
-]
+    {name = "Безгина Анастасия",email = "brbrbraleale@gmail.com"}]
+package-mode = false
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-]
 
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+mypy = "^1.8.0"
+isort = "^5.13.0"
+black = "^24.1.0"
+flake8 = "^7.0.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=2.3.1"]
 build-backend = "poetry.core.masonry.api"
-readme = "README.md"
-package-mode = false
