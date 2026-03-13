@@ -9,6 +9,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+pandas = "^3.0.1"
+openpyxl = "^3.1.5"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
@@ -20,3 +22,15 @@ flake8 = "^7.0.0"
 [build-system]
 requires = ["poetry-core>=2.3.1"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+line_length = 119
+profile = "black"
+skip = [".git", ".venv", ".idea", "__pycache__"]
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = "venv"
+python_version = "3.12"
+ignore_missing_imports = true
