@@ -1,7 +1,10 @@
-import pytest
-import pandas as pd
+"""Тесты для модуля views.py"""
 import json
 from unittest.mock import patch
+
+import pandas as pd
+import pytest
+
 from src.views import events_page
 
 

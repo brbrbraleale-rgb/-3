@@ -1,15 +1,13 @@
+"""Главная функция JSON-ответа для страницы События."""
 import json
+
 import pandas as pd
-from .utils import (
-    filter_transactions,
-    process_categories,
-    get_currency_rates,
-    get_stock_prices
-)
+
+from .utils import filter_transactions, get_currency_rates, get_stock_prices, process_categories
 
 
 def events_page(df, date_str, range_type=None):
-    """Главная функция формирования JSON-ответа для страницы События."""
+    """ функция формирования JSON-ответа для страницы События."""
 
     # Фильтруем данные
     period_df = filter_transactions(df, date_str, range_type)

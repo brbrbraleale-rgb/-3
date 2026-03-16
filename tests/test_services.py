@@ -1,9 +1,11 @@
 """Модуль для тестирования функций сервиса анализа кэшбэка."""
 
-import pytest
-from unittest.mock import patch
-import pandas as pd
 import json
+from unittest.mock import patch
+
+import pandas as pd
+import pytest
+
 from src.services import get_cashback_categories
 
 

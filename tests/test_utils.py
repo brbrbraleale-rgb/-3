@@ -1,8 +1,12 @@
-import pytest
-import pandas as pd
+"""Тесты для модуля utils.py"""
 from unittest.mock import patch
+
+import pandas as pd
+import pytest
+
 # Импортируем напрямую из файла
-from src.utils import filter_transactions, process_categories, get_currency_rates
+from src.utils import filter_transactions, get_currency_rates, process_categories
+
 
 @pytest.fixture
 def sample_df():

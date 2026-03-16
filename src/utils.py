@@ -1,10 +1,9 @@
 """Модуль со вспомогательными функциями для обработки данных страницы События"""
-import os
-import json
 import logging
-import requests
+import os
+
 import pandas as pd
-from datetime import datetime
+import requests
 from dotenv import load_dotenv
 
 # Загрузка ключей из файла .env

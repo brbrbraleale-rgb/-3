@@ -1,11 +1,13 @@
+"""Функции основного анализа данных сервисов"""
 import json
 import logging
-from datetime import datetime
+#from datetime import datetime
+
 import pandas as pd
 
 # Настройка логирования
 logger = logging.getLogger(__name__)
-# Установим базовую конфигурацию, если она не задана в  файле
+# Установим базовую конфигурацию, если она не задана в файле
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
@@ -20,7 +22,7 @@ def get_cashback_categories(data_excel: str, year: int, month: int) -> str:
         # Читаем .xlsx файл
         df = pd.read_excel(data_excel)
 
-        # Преобразуем колонку с датой. Параметр dayfirst=True  для формата ДД.ММ.ГГГГ
+        # Преобразуем колонку с датой. Параметр day first =True для формата ДД.ММ.ГГГГ
         df['Дата операции'] = pd.to_datetime(df['Дата операции'], dayfirst=True)
 
         # Функциональный подход: фильтруем датафрейм по году и месяцу
@@ -36,7 +38,7 @@ def get_cashback_categories(data_excel: str, year: int, month: int) -> str:
         filtered_df['Кэшбэк'] = filtered_df['Кэшбэк'].fillna(0)
 
         # Группируем по категории и суммируем кэшбэк
-        # Преобразуем результат в словарь
+        # Приобразуем результат в словарь
         category_cashback = filtered_df.groupby('Категория')['Кэшбэк'].sum().to_dict()
 
         # Оставляем только те категории, где кэшбэк больше 0
